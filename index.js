@@ -3,7 +3,7 @@
 const express = require('express');
 
 require('dotenv').config();
-// const cors = require("cors");
+const cors = require("cors");
 
 const port = process.env.PORT || 5000;
 const connectDB = require('./config/db');
@@ -19,7 +19,7 @@ const app = express();
 
 // Body parser moddleware
 app.use(express.json());
-// app.use(cors({ origin: "*", optionsSuccessStatus: 200 })); 
+app.use(cors())
 
 app.use(express.urlencoded({extended: false}))
 
